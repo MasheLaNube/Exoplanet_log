@@ -15,14 +15,14 @@ class ExoplanetLog:
         if not os.path.exists(system_params):
             open(system_params, "w").close()
 
-        print(f"Sistem {name_sys} created in {system_folder}.")
+        print(f"System {name_sys} created in {system_folder}.")
 
 
     def add_exoplanet(self, name_system, name_exo):
         """Create the folder of an exoplanet"""
         system_folder = os.path.join(self.base_folder, name_system)
         if not os.path.exists(system_folder):
-            raise FileNotFoundError(f"The sistem {name_system} does not exist. First create the system with add_system().")
+            raise FileNotFoundError(f"The system {name_system} does not exist. First create the system with add_system().")
 
         exo_folder = os.path.join(system_folder, name_exo)
         os.makedirs(exo_folder, exist_ok=True)
@@ -94,7 +94,7 @@ class ExoplanetLog:
 
         exo_folder = os.path.join(self.base_folder, name_system, name_exo)
         ref_file = os.path.join(exo_folder, "references.csv")
-        print("Insert the links from your references (Leave blank to finish):")
+        print("Insert the links from your references (Leave 'reference link' blank to finish):")
         referencias = []
 
         while True:
